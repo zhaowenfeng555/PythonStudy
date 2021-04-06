@@ -1,8 +1,7 @@
 # encoding: utf-8
 # @author: fengr358
 # @time: 2021/3/7 14:28
-# @desc: dict
-dict
+# @desc: python数据结构，排序算法整理
 
 import numpy as np
 import math

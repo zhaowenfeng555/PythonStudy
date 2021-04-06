@@ -1,7 +1,7 @@
 # encoding: utf-8
 # @author: fengr358
 # @time: 2021/3/7 22:10
-# @desc:
+# @desc: python dict 底层实现
 
 class HashTable:
     def __init__(self):
