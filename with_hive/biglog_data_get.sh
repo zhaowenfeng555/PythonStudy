@@ -31,3 +31,18 @@ WHERE event_day = ${date_today}
 #
 # python python3.6.tar.gz/python3.6/bin/python3 prepareTestCase_zwf.py 1>&2
 
+
+# 适用 udf 函数：
+#
+#add jar file:///tmp/udf.jar;
+#CREATE temporary function str_md5 as 'com.lxw1234.hive.udf.HashMd5';
+#select str_md5(‘lxw1234.com’) from dual;
+
+add jar uda.jar;
+create temporary function row_number as 'com.baidu.iknow.uda.hive.udf.RowNumber';
+select cuid, row_number(concat(platform, software_version, os_version, terminal_type)) as rank
+from tmp
+where row_number(concat(platform, software_version, os_version, terminal_type)) <= 100
+
+
+
