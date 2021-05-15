@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 ################################################################################
 #
-# Copyright (c) 2018 Baidu.com, Inc. All Rights Reserved
 #
 ################################################################################
 """
 提供给多模的表情搜索
 
-Authors: zhaowenfeng(zhaowenfeng@baidu.com)
+Authors:
 Date:    2018/10/29 16:26:45
 """
 import sys
@@ -58,7 +57,7 @@ try:
 except:
     print ('error')
 
-url = 'http://inner.openapi.baidu.com/rest/2.0/mms/emoji/log'
+url = 'http://inner.opt'
 word = urllib.urlencode(json_str_val)  # 转换成url编码格式(字符串)
 
 newurl = url + "?" + word
@@ -89,7 +88,7 @@ if tries >= MAX_TRIES_TIMES:
 # get2 request.get
 # import requests
 #
-# url="http://apis.juhe.cn/mobile/get?phone=18171060558&dtype=&key=92b9911c208b300be4b75079a3bcfa68"
+# url=""
 # r=requests.get(url)
 # info=r.json()
 # print(r.status_code)
@@ -108,7 +107,7 @@ if tries >= MAX_TRIES_TIMES:
 # header_dict = {
 #     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko',
 #     "Content-Type": "application/json"}
-# url = 'http://inner.openapi.baidu.com/rest/2.0/mms/emoji/log'
+# url = ''
 # req = urllib2.Request(url=url, data=text_mod, headers=header_dict)
 # count_lines += 1
 #
@@ -123,7 +122,7 @@ if tries >= MAX_TRIES_TIMES:
 #     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko',
 #     "Content-Type": "application/json"}
 #
-# url = 'http://dyapi.iqiyi.com/api/baidu/pingback?'
+# url = '?'
 # timestamp = long(time.time()*1000)
 # sign = hashlib.md5('uQTngBBXswUkosmO#' + str(timestamp)).hexdigest()
 # url = url + 'timestamp=' + str(timestamp) + '&sign=' + sign
@@ -152,7 +151,7 @@ if tries >= MAX_TRIES_TIMES:
 #     'Content-Type': 'application/json'
 # }
 # list_qingshan = []
-# url = 'http://api.lionmobo.com/api/baidu/orderList'
+# url = ''
 # # 第一次跑获取总的页数
 # page = 1
 # key_input = {"orderEndTime": end_time,
