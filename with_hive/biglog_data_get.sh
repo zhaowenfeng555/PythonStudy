@@ -5,7 +5,7 @@
 
 date_today=$1
 source ~/.bash_profile
-qe_jiuying -e "
+hhhh -e "
 SET mapred.job.name = 'zwf_test_${date_today}';
 SET mapred.map.tasks = 5000;
 SET mapred.reduce.tasks = 1000;
