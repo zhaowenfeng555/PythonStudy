@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+    <table border="1" cellpadding="0" cellspacing="0"> 
+        <tr> 
+            <th width="100" align="center">日期</th> 
+            <th width="100" align="center">渠道号</th> 
+            <th width="200" align="center">渠道名称</th>
+            <th width="200" align="center">推广产品</th> 
+            <th width="100" align="center">一次激活</th> 
+        </tr>
+        {0}
+    </table>
+    <br>
+    ---------------------------------------------------------<br>
+    If you received this communication by mistake, please don't forward it to<br>
+    anyone else (it may contain confidential or privileged information), please<br>
+    erase all copies of it, including all attachments, and please let the<br>
+    sender know it went to the wrong person.  Thanks.<br>
+    如果您错误地收到此邮件 ，<br>
+    请不要转发给任何人（此邮件含有机密信息并受法律保护），请立即删除此邮件，包括其全部附件。并请告知发件人此邮件被发至错误的收件人。谢谢合作<br>
+    ---------------------------------------------------------<br>
+</html>
