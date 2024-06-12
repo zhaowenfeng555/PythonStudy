@@ -15,22 +15,27 @@ class Solution:
         # 异常判断
         if arr is None or len(arr) <= 0:
             return
-        # self.bubble_sort(arr)
+        self.bubble_sort(arr)
         # self.bubble_sort_update(arr)
         # self.select_sort(arr)
         # self.insert_sort(arr)
         # self.shell_sort(arr)
-        self.merge_sort(arr)
+        # self.merge_sort(arr)
         # self.quick_sort(arr)
         print ('result is ',)
         print (arr)
 
     def bubble_sort(self, arr):
-        # 冒泡排序，相邻比较
-        for i in range(0, len(arr)-1):
+        ## 冒泡排序，相邻比较
+        # for i in range(0, len(arr)-1):
+        #     for j in range(i):
+        #         if arr[j] > arr[j+1]:
+        #             arr[j], arr[j+1] = arr[j+1], arr[j]
+        for i in range(len(arr)-1, 0, -1):
             for j in range(i):
                 if arr[j] > arr[j+1]:
                     arr[j], arr[j+1] = arr[j+1], arr[j]
+
 
     def bubble_sort_update(self, arr):
         # 如果没有交换，则早停
