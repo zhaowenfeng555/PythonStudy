@@ -24,7 +24,7 @@ class Solution:
             if nums[mid] == target:
                 return mid
 
-            if nums[left] <= nums[mid]:
+            if nums[0] <= nums[mid]:
                 if nums[left] <= target < nums[mid]:
                     right = mid - 1
                 else:

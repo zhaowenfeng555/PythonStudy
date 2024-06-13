@@ -105,7 +105,7 @@ class Solution:
                 queue.append(p.right)
 
     def pre_order_not_with_array(self, head, list_output):
-
+        pass
 
     def in_order_not_with_array(self, head, list_output):
         pass

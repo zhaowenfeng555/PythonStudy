@@ -15,13 +15,14 @@ class Solution:
         # 异常判断
         if arr is None or len(arr) <= 0:
             return
-        self.bubble_sort(arr)
+        # self.bubble_sort(arr)
         # self.bubble_sort_update(arr)
         # self.select_sort(arr)
         # self.insert_sort(arr)
         # self.shell_sort(arr)
         # self.merge_sort(arr)
         # self.quick_sort(arr)
+        self.heapsort(arr)
         print ('result is ',)
         print (arr)
 
@@ -144,9 +145,45 @@ class Solution:
 
         quick_sort_help(arr, 0, len(arr)-1)
 
+    def heapsort(self, arr):
+        def get_left_index(index):
+            return (index << 1) + 1
+        def get_right_index(index):
+            return (index << 1) + 2
+        def get_parent_index(index):
+            return (index - 1) >> 1
+        def max_heap(arr, heap_size, index):
+            left = get_left_index(index)
+            right = get_right_index(index)
+            largest = index
+            if left < heap_size and arr[left] > arr[largest]:
+                largest = left
+            if right < heap_size and arr[right] > arr[largest]:
+                largest = right
+            if largest != index:
+                arr[largest], arr[index] = arr[index], arr[largest]
+                max_heap(arr, heap_size, largest)
+        def build_heap(arr):
+            heap_size = len(arr)
+            start_index = get_parent_index(heap_size-1)
+            while start_index >= 0:
+                max_heap(arr, heap_size, start_index)
+                start_index -= 1
+
+        build_heap(arr)
+        end_index = len(arr)
+        while end_index > 0:
+            arr[0], arr[end_index-1] = arr[end_index-1], arr[0]
+            end_index -= 1
+            max_heap(arr, end_index, 0)
+            print(end_index)
+            print(arr)
+
 solution = Solution()
 arr = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+# arr = [70, 60, 12, 40, 30, 8, 10]
 solution.main(arr)
+
 
 
 
