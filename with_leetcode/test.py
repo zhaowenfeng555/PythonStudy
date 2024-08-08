@@ -1,21 +1,24 @@
+from typing import List
 class Solution:
-    def process(self, nums, target):
-        left, right = 0, len(nums) - 1
-        while left <= right:
-            mid = left + ((right - left) >> 1)
-            if target <= nums[mid]:
-                right = mid - 1
-            else:
-                left = mid + 1
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums or len(nums) == 0:
+            return 0, nums
+        k = 0
+        for i in range(1, len(nums)):
+            if nums[i] != nums[k]:
+                k += 1
+                nums[k] = nums[i]
+        print(nums)
+        print(k)
+        nums[k: len(nums)] = [None] * (len(nums) - k)
+        print(nums)
+        return k
 
-            print (' '.join(['in', str(left), str(mid), str(right)]))
+nums = [1,1,2]  # [1,2,_]
 
-        print(' '.join(['out', str(left), str(mid), str(right)]))
-        if left < len(nums) and nums[left] == target:
-            return left
-        return -1
 
-res = Solution().process([2, 2], 3)
-print ('>>>>>>>>>>>>>>>')
-print (res)
+nums = [0,0,1,1,1,2,2,3,3,4]  # [0,1,2,3,4]
+print(Solution().removeDuplicates(nums))
+
+
 
