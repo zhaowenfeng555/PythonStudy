@@ -1,45 +1,43 @@
-# encoding: utf-8
-# @author: fengr358
-# @time: 2024/6/23 0:21
-# @desc: 跳跃
+from collections import Counter
 
-from typing import List
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution:
-    def solveNQueens(self, n: int) -> List[List[str]]:
-        if n <= 0:
-            return []
-        path, result = [], []
-        self.backtracking(n, path, result, 0)
-        print(result)
-        result_output = []
-        for item in result:
-            item_output = ['.' * n for _ in range(n)]
-            for i, j in item:
-                item_output[i][j] = 'Q'
-            result_output.append(item_output)
-        return result_output
+    def findMode(self, root: Optional[TreeNode]) -> List[int]:
 
-    def backtracking(self, n, path, result, startindex):
-        if len(path) == n:
-            result.append(path[:])
+        if not root:
+            return None
+        self.pre = None
+        self.max_pv = float('-inf')
+        self.cur_pv = 0
+        self.result = []
+        self.dfs(root)
+        return self.result
+
+    def dfs(self, root):
+        if not root:
             return
-        if len(path) > n:
-            return
+        self.dfs(root.left)
+        if not self.pre:
+            self.cur_pv = 1
+            self.max_pv = 1
+            self.result = [root.val]
+        else:
+            if root.val == self.pre.val:
+                self.cur_pv += 1
+                if self.cur_pv > self.max_pv:
+                    self.max_pv = self.cur_pv
+                    self.result = [root.val]
+                elif self.cur_pv == self.max_pv:
+                    self.result.append(root.val)
+            else:
+                self.cur_pv = 1
 
-        for i in range(n):
-            for j in range(n):
-                if i * n + j < startindex:
-                    continue
-
-                flag = True
-                for (i_use, j_use) in path:
-                    if i == i_use or j == j_use or abs(i - i_use) == abs(j - j_use):
-                        flag = False
-                        break
-                if flag:
-                    path.append((i, j))
-                    self.backtracking(n, path, result, i * n + j)
-                    path.pop()
-print(Solution().solveNQueens(4))
+        pre = root
+        self.dfs(root.right)
 
